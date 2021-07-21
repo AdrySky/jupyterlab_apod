@@ -145,6 +145,14 @@ function activate (app: JupyterFrontEnd, palette:ICommandPalette, restorer: ILay
 
   // Add the command to the palette.
   palette.addItem({ command, category: 'Tutorial' });
+  
+    //Bind to Shorcut Key
+    app.commands.addKeyBinding({
+  command,
+  args: {},
+  keys: ['Shift T'],
+  selector: '.jp-Notebook'
+});
 
    // Track and restore the widget state
    let tracker = new WidgetTracker<MainAreaWidget<APODWidget>>({
